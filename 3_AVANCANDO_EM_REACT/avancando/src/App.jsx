@@ -1,6 +1,8 @@
 // Componentes de aula
 import GerenciamentoDeEstados from './components/GerenciamentoDeEstados'
 import ImportandoImagens from './components/ImportandoImagens'
+import RenderizacaoDeListas from './components/RenderizacaoDeListas'
+import RenderizacaoCondicional from './components/RenderizacaoCondicional'
 // Componentes de exercícios
 import ExercicioIncrementoDecremento from './components/ExercicioIncrementoDecremento'
 import ExercicioMostrarEsconder from './components/ExercicioMostrarEsconder'
@@ -23,7 +25,9 @@ function App() {
       {/* <ExercicioMostrarEsconder /> */}
       {/* <ExercicioInputControlado /> */}
       {/* <ExercicioListaDinamica /> */}
-      <ExercicioListaDinamicaCompleta />
+      {/* <ExercicioListaDinamicaCompleta /> */}
+      {/* <RenderizacaoDeListas /> */}
+      <RenderizacaoCondicional />
     </>
   )
 }
