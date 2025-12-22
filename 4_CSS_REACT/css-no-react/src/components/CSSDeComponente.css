@@ -1,0 +1,9 @@
+/* 
+É muito importante lembrar que o CSS de componente pode vazar para outros componentes. Sendo assim, é
+recomenado usar nomes de classes e IDs únicaos para evitar conflitos e não a indicação direta de tags HTML
+como feito abaixo.
+*/
+p {
+    color: green;
+    background-color: #000;
+}
