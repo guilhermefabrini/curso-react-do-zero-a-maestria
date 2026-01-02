@@ -9,6 +9,7 @@ const MeuFormulario = ({user}) => {
     // Gerenciamento de dados
     const [nome, setNome] = useState(user ? user.nome : "")
     const [email, setEmail] = useState(user ? user.email : "")
+    const [bio, setBio] = useState("")
 
     const handleNome = (e) => {
         setNome(e.target.value);
@@ -18,11 +19,12 @@ const MeuFormulario = ({user}) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log("Enviando formulário")
-        console.log(nome, email)
+        console.log(nome, email, bio)
 
         // 7 - Limpando formulários
         setNome("")
         setEmail("")
+        setBio("")
     }
 
     return (
@@ -50,6 +52,16 @@ const MeuFormulario = ({user}) => {
                         onChange={(e) => setEmail(e.target.value)} 
                         value={email}
                         />
+                </label>
+                {/* Aula textarea */}
+                <label>
+                    <span>Bio:</span>
+                    <textarea 
+                        name="bio" 
+                        placeholder="Descrição do usuário"
+                        onChange={(e) => setBio(e.target.value)}
+                        value={bio}
+                        ></textarea>
                 </label>
                 <input type="submit" value="Enviar" />
             </form>
