@@ -3,6 +3,7 @@ import './App.css'
 
 // Import Componentes
 import MeuFormulario from './components/MeuFormulario'
+import ComponenteQualquer from './components/ComponenteQualquer'
 
 function App() {
 
@@ -10,6 +11,8 @@ function App() {
     <>
       <h2>Forms</h2>
       <MeuFormulario user={{ nome: "Guilherme", email: "gugafabrini@gmail.com" }} />
+      {/* Criado para praticar a criação de componentes. */}
+      <ComponenteQualquer />
     </>
   )
 }
