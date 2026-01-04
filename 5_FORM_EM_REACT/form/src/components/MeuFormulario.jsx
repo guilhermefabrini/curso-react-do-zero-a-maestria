@@ -9,7 +9,8 @@ const MeuFormulario = ({user}) => {
     // Gerenciamento de dados
     const [nome, setNome] = useState(user ? user.nome : "")
     const [email, setEmail] = useState(user ? user.email : "")
-    const [bio, setBio] = useState("")
+    const [bio, setBio] = useState(user ? user.bio: "")
+    const [funcao, setFuncao] = useState(user ? user.funcao: "")
 
     const handleNome = (e) => {
         setNome(e.target.value);
@@ -19,7 +20,7 @@ const MeuFormulario = ({user}) => {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log("Enviando formulário")
-        console.log(nome, email, bio)
+        console.log(nome, email, bio, funcao)
 
         // 7 - Limpando formulários
         setNome("")
@@ -62,6 +63,16 @@ const MeuFormulario = ({user}) => {
                         onChange={(e) => setBio(e.target.value)}
                         value={bio}
                         ></textarea>
+                </label>
+                {/* Aula Selects no React */}
+                <label>
+                    <span>Função no Sistema</span>
+                    <select name="funcao" onChange={(e) => setFuncao(e.target.value)} value={funcao}>
+                        <option value="user">Usuário</option>
+                        <option value="editor">Editor</option>
+                        <option value="admin">Administrador</option>
+                    </select>
+
                 </label>
                 <input type="submit" value="Enviar" />
             </form>

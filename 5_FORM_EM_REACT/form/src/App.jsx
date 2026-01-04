@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <h2>Forms</h2>
-      <MeuFormulario user={{ nome: "Guilherme", email: "gugafabrini@gmail.com" }} />
+      <MeuFormulario user={{ nome: "Guilherme", email: "gugafabrini@gmail.com", bio: "Sou um advogado", funcao: "admin" }} />
       {/* Criado para praticar a criação de componentes. */}
       <ComponenteQualquer />
     </>
