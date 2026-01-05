@@ -23,15 +23,28 @@ function App() {
   const [gameStage, setGameStage] = useState(stages[0].name);
   const [words] = useState(wordsList)
 
-  console.log(words)
+  // Inicia o jogo
+  const startGame = () => {
+    setGameStage(stages[1].name)
+  }
+
+  // Processar o input da letra
+  const verifyLetter = () => {
+    setGameStage(stages[2].name)
+  }
+
+  // Reiniciar o jogo
+  const retry = () => {
+    setGameStage(stages[0].name)
+  }
 
   return (
     <div className='App'>
       {/* Aqui, estamos dizendo que será exibido o componente 
       de acordo com o valor dentro de 'gameStage' */}
-      {gameStage === 'start' && <StartScreen />}
-      {gameStage === 'game' && <Game />}
-      {gameStage === 'end' && <GameOver />}
+      {gameStage === 'start' && <StartScreen startGame={startGame} />}
+      {gameStage === 'game' && <Game verifyLetter={verifyLetter} />}
+      {gameStage === 'end' && <GameOver retry={retry} />}
     </div>
   )
 }
