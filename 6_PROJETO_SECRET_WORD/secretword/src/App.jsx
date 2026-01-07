@@ -18,6 +18,8 @@ const stages = [
   { id: 3, name: "end" }
 ]
 
+const guessesQty = 3
+
 function App() {
 
   const [gameStage, setGameStage] = useState(stages[0].name);
@@ -28,7 +30,7 @@ function App() {
   const [letters, setLetters] = useState([])
   const [guessedLetters, setGuessedLetters] = useState([])
   const [wrongLetters, setWrongLetters] = useState([])
-  const [guesses, setGuesses] = useState(3)
+  const [guesses, setGuesses] = useState(guessesQty)
   const [score, setScore] = useState(0)
 
   const pickWordAndCategory = () => {
@@ -78,11 +80,38 @@ function App() {
         ...actualWrongLetters,
         normalizedLetter
       ])
+
+      setGuesses((actualGuesses) => actualGuesses - 1)
+
     }
   }
 
+  const clearLetterStates = () => {
+    setGuessedLetters([])
+    setWrongLetters([])
+
+  }
+
+  /**
+   * O useEffect monitora um dado (aquele informado no array) e executa a lógica definida quando ele sofre uma
+   * alteração.
+   */
+  useEffect(() => {
+    if (guesses <= 0) {
+      /**
+       * Quando o jogo termina é necessário limpar todos os states para
+       * que seja todos os states zerados ao iniciar um novo jogo.
+       */
+      clearLetterStates();
+      setGameStage(stages[2].name);
+    }
+  }, [guesses])
+
   // Reiniciar o jogo
   const retry = () => {
+    setScore(0)
+    setGuesses(guessesQty)
+
     setGameStage(stages[0].name)
   }
 
