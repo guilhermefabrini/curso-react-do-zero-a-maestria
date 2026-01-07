@@ -33,7 +33,7 @@ function App() {
   const [guesses, setGuesses] = useState(guessesQty)
   const [score, setScore] = useState(0)
 
-  const pickWordAndCategory = () => {
+  const pickWordAndCategory = useCallback(() => {
     // Capturar categoria aleatória
     const categories = Object.keys(words)
     const category = categories[Math.floor(Math.random() * Object.keys(categories).length)]
@@ -41,10 +41,18 @@ function App() {
     const word = words[category][Math.floor(Math.random() * words[category].length)]
     
     return {word, category}
+  }, [words])
+
+  const clearLetterStates = () => {
+    setGuessedLetters([])
+    setWrongLetters([])
   }
 
   // Inicia o jogo
-  const startGame = () => {
+  const startGame = useCallback(() => {
+    // Limpa todas as letras
+    clearLetterStates()
+
     // Capturar palavra e categoria
     const { word, category } = pickWordAndCategory()
     // Transformar palavra em letras
@@ -59,7 +67,7 @@ function App() {
     setLetters(wordLetters)
     
     setGameStage(stages[1].name)
-  }
+  }, [pickWordAndCategory])
 
   // Processar o input da letra
   const verifyLetter = (letter) => {
@@ -86,12 +94,6 @@ function App() {
     }
   }
 
-  const clearLetterStates = () => {
-    setGuessedLetters([])
-    setWrongLetters([])
-
-  }
-
   /**
    * O useEffect monitora um dado (aquele informado no array) e executa a lógica definida quando ele sofre uma
    * alteração.
@@ -106,6 +108,24 @@ function App() {
       setGameStage(stages[2].name);
     }
   }, [guesses])
+
+  // Verificar condição de vitória "win condition"
+  useEffect(() => {
+
+    // Esta linha cria um array somente com as letras únicas da palavra que foi sorteada.
+    // Por exemplo: A palavra 'ovo' tem duas letras 'o'. O Set() elimina as letras 'o' repetidas e mantém apenas uma no array
+    const uniqueLetters = [... new Set(letters)]
+
+    // Se vitória
+    if (guessedLetters.length === uniqueLetters.length) {
+      //Adiciona pontuação
+      setScore((actualScore) => actualScore += 100)
+      //Reinicia o jogo com nova palavra
+      startGame() 
+
+    }
+
+  }, [guessedLetters, letters, startGame])
 
   // Reiniciar o jogo
   const retry = () => {
