@@ -26,6 +26,10 @@ function App() {
   const [pickedWord, setPickedWord] = useState("")
   const [pickedCategory, setPickedCategory] = useState("")
   const [letters, setLetters] = useState([])
+  const [guessedLetters, setGuessedLetters] = useState([])
+  const [wrongLetters, setWrongLetters] = useState([])
+  const [guesses, setGuesses] = useState(3)
+  const [score, setScore] = useState(0)
 
   const pickWordAndCategory = () => {
     // Capturar categoria aleatória
@@ -50,7 +54,7 @@ function App() {
     // Setar estados
     setPickedWord(word)
     setPickedCategory(category)
-    setLetters(letters)
+    setLetters(wordLetters)
     
     setGameStage(stages[1].name)
   }
@@ -70,7 +74,18 @@ function App() {
       {/* Aqui, estamos dizendo que será exibido o componente 
       de acordo com o valor dentro de 'gameStage' */}
       {gameStage === 'start' && <StartScreen startGame={startGame} />}
-      {gameStage === 'game' && <Game verifyLetter={verifyLetter} />}
+      {gameStage === 'game' && (
+        <Game
+          verifyLetter={verifyLetter} 
+          pickedWord={pickedWord}
+          pickedCategory={pickedCategory}
+          letters={letters}
+          guessedLetters={guessedLetters}
+          wrongLetters={wrongLetters}
+          guesses={guesses}
+          score={score}
+       />
+      )}
       {gameStage === 'end' && <GameOver retry={retry} />}
     </div>
   )
