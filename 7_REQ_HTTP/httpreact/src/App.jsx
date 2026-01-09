@@ -41,7 +41,7 @@ function App() {
       },
       body: JSON.stringify(products)
     })
-
+    console.log(res)
   }
 
   console.log(products)
