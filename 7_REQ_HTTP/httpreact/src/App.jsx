@@ -41,7 +41,16 @@ function App() {
       },
       body: JSON.stringify(products)
     })
-    console.log(res)
+    // 3 - Carregamento dinâmico
+    // transforma a resposta em um objeto json contendo o item adicionao
+    const addedProduct = await res.json();
+    // o primeiro argumento de um 'set' é sempre o previous state, que nada mais é do que a versão atual do state.
+    // o que fazemos abaixo é pegar a versão atual da lista de produtos e adicionar à ela o valor novo cadastrado.
+    setProducts((prevProducts) => [...prevProducts, addedProduct])
+
+    // limpa os campos do formulário após o cadastro
+    setName("")
+    setPrice("")
   }
 
   console.log(products)
