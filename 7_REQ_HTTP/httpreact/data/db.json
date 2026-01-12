@@ -24,6 +24,11 @@
       "id": "69e5",
       "name": "Tênis ",
       "price": "300"
+    },
+    {
+      "id": "7b34",
+      "name": "teste",
+      "price": "111"
     }
   ]
 }
