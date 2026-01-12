@@ -34,6 +34,16 @@
       "id": "38f0",
       "name": "TESTE",
       "price": "1001"
+    },
+    {
+      "id": "4ff1",
+      "name": "TESTANDO LOADING POST",
+      "price": "1010"
+    },
+    {
+      "id": "7e33",
+      "name": "testando loading post 2",
+      "price": "2000"
     }
   ]
 }
