@@ -1,10 +1,19 @@
-import { useContext } from 'react';
-import { CounterContext } from '../context/CounterContext';
+/**
+ * Os códigos comentados abaixo são relativos ao método de uso sem hook dos contexts.
+ * Quando passamos a usar com o hook 'useCounterContext' comentamos as importações e o useContext().
+ */
+
+// import { useContext } from 'react';
+// import { CounterContext } from '../context/CounterContext';
 import ChangeCounter from '../components/ChangeCounter';
+
+// 4 - Refatorando com hook
+import { useCounterContext } from '../hooks/useCounterContext';
 
 const Home = () => {
 
-    const { counter } = useContext(CounterContext)
+    // const { counter } = useContext(CounterContext)
+    const { counter } = useCounterContext() 
 
     return (
         <div>
