@@ -14,7 +14,7 @@ import SearchForm from './components/SearchForm'
 
 
 // 1 - Configuração React Router
-import {BrowserRouter, Routes, Route} from 'react-router-dom'
+import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom'
 
 function App() {
 
@@ -34,6 +34,8 @@ function App() {
           <Route path='/products/:id/info' element={<Info />} />
           {/* 9 - Search */}
           <Route path='/search' element={<Search />} />
+          {/* 10 - Redirect */}
+          <Route path='/company' element={<Navigate to="/about" />} />
           {/* 7 - No Match Route */}
           <Route path='*' element={<NotFound />} />
         </Routes>
