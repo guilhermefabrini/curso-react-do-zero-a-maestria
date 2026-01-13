@@ -1,0 +1,21 @@
+nav {
+    display: flex;
+    justify-content: center;
+}
+
+nav a {
+    margin: 0 10px;
+    padding: 5px;
+    text-decoration: none;
+    color: #15726c;
+}
+
+nav a:hover {
+    color: #2ebfb5;
+}
+
+.active {
+    background-color: #292929;
+    border-radius: 10px;
+    color: #2eecdf;
+}
