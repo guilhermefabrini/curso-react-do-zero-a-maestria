@@ -1,3 +1,8 @@
+/**
+ * A importação do getFirestore, a criação da constante db e o export {db} foram adicionados
+ * ao código pronto que copiamos do site do Firebase.
+ */
+
 import { initializeApp } from "firebase/app"
 import { getFirestore } from "firebase/firestore"
 
