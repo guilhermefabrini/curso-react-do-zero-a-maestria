@@ -1,5 +1,6 @@
 // CSS
 import styles from './About.module.css'
+console.log(styles)
 
 const About = () => {
     return (
