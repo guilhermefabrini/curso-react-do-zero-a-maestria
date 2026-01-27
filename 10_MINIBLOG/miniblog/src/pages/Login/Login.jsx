@@ -13,7 +13,7 @@ const Login = () => {
    * O que é error: authError
    * Esse código está apenas renomeando error para authError
    */
-  const { createUser, error: authError, loading } = useAuthentication();
+  const { login, error: authError, loading } = useAuthentication();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -26,7 +26,7 @@ const Login = () => {
       password,
     };
 
-    const res = await createUser(user);
+    const res = await login(user);
 
     console.log(res);
   };
