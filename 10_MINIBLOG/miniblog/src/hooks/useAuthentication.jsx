@@ -1,4 +1,4 @@
-import {db} from "../firebase/config"
+import {db, auth} from "../firebase/config"
 
 import { 
     getAuth, 
@@ -18,7 +18,7 @@ export const useAuthentication = () => {
     // Lida com o vazamento de memória por conta da quantidade de componentes
     const [cancelled, setCancelled] = useState(false)
 
-    const auth = getAuth()
+    // const auth = getAuth()
 
     function checkIfIsCancelled() {
         if (cancelled) return
@@ -79,12 +79,22 @@ export const useAuthentication = () => {
         } catch (error) {
 
             let systemErrorMessage
-            if (error.message.includes("user-not-found")) {
-                systemErrorMessage = "Usuário não encontrado"
-            } else if (error.message.includes("wrong-password")) {
-                systemErrorMessage = "Senha incorreta."
+            /**
+             * Esse código abaixo é o que foi passado em aula. No entanto, devido a atualizações
+             * no firebase, não está mais funcionando. A solução abaixo foi retirada do fórum do 
+             * curso.
+             */
+            // if (error.message.includes("user-not-found")) {
+            //     systemErrorMessage = "Usuário não encontrado"
+            // } else if (error.message.includes("wrong-password")) {
+            //     systemErrorMessage = "Senha incorreta."
+            // } else {
+            //     systemErrorMessage = "Ocorreu um erro, por favor, tente mais tarde."
+            // }
+            if (error.message.includes("invalid-credential")) {
+                systemErrorMessage = "E-mail ou senha incorretos."
             } else {
-                systemErrorMessage = "Ocorreu um erro, por favor, tente mais tarde."
+                systemErrorMessage = "Ocorreu um erro, por favor tente novamente mais tarde."
             }
 
             setError(systemErrorMessage)
