@@ -43,6 +43,7 @@ export const useFetchDocuments = (docCollection, search = null, uid = null) => {
         }
 
         loadData()
+        //esse loadData eu tinha esquecido
 
     }, [docCollection, search, uid, cancelled])   
 
