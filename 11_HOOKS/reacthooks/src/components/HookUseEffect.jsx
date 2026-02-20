@@ -13,6 +13,11 @@ const HookUseEffect = () => {
         setNumber(number + 1)
     }
 
+    // 2 - Exemplo com array de dependências vazio
+    useEffect(() => {
+        console.log("Serei executado apenas uma vez")
+    }, [])
+
     return (
         <div>
             <h2>useEffect</h2>
