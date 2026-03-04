@@ -1,16 +1,50 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// Como vai ser usado o Tailwind, o App.css foi deletado porque não 
+// tem necessidade de existir :D
+// import './App.css'
+
+import { useState } from "react"
+import { motion } from "framer-motion"
+import {
+  ArrowRight,
+  Check,
+  Menu,
+  X,
+  Star,
+  Shield,
+  Zap,
+  Sparkles
+} from 'lucide-react'
+
+const navLinks = [
+  { href: "#features", label: "Recursos" },
+  { href: "#testmonials", label: "Depoimentos" },
+  { href: "#pricing", label: "Preços" },
+  { href: "#faq", label: "FAQ" }
+];
 
 function App() {
-  const [count, setCount] = useState(0)
+
+  const [open, setOpen] = useState(false)
 
   return (
-    <>
-      <h1 className='text-3xl font-bold'>Hello World React Tailwind</h1>
-    </>
-  )
+    <div className="bg-slate-950 text-slate-100 selection:bg-fuchsia-500/30">
+      {/* Navbar */}
+      <header className="sticky top-0 z-40 border-b border-white/5">
+        <div>
+          <a href="#" className="flex items-center gap-2">
+            <Sparkles className="size-5 text-fuchsia-400" />
+            <span className="font-bold tracking-tight ">Minha Marca</span>
+          </a>
+
+          <nav>
+            {navLinks.map((l) => (
+              <a>{l.label}</a>
+            ))}
+          </nav>
+        </div>
+      </header>
+    </div>
+  );
 }
 
 export default App
