@@ -90,6 +90,51 @@
             </div>
           )}
         </header>
+        <section className="relative overflow-hidden">
+          <div className="mx-auto max-w-6xl px-4 py-20 relative">
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1 }}
+              className="text-6xl font-extrabold"
+            >
+              Acelere sua presença online com uma landing{" "}
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-fuchsia-400 to-violet-300">
+                simples e eficaz
+              </span>
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 1 }}
+              className="mt-4 text-slate-300 max-w-2xl"
+            >
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s, when an unknown printer took a galley of
+              type and scrambled it to make a type specimen book.
+            </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 1 }}
+              className="mt-8 flex flex-row gap-3"
+            >
+              <a
+                href="#"
+                className="inline-flex items-center justify-center gap-2 rounded-2xl bg-fuchsia-600 px-6 py-3 font-medium hover:bg-fuchsia-700 transition"
+              >
+                Comece agora <ArrowRight className="size-4" />
+              </a>
+              <a
+                href="#"
+                className="inline-flex items-center justify-center gap-2 rounded-2xl px-6 py-3 font-medium border border-white/10 hover:bg-white/5 transition"
+              >
+                Ver Recursos
+              </a>
+            </motion.div>
+          </div>
+        </section>
       </div>
     );
   }
