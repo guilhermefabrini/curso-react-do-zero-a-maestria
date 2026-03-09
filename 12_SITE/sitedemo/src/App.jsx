@@ -169,32 +169,32 @@
             {[
               {
                 title: "Design Responsivo",
-                desc: "Funciona em qualquer tela",
+                desc: "O aplicativo se adapta a qualquer tamanho de tela. Celular, tablet ou PC, use de onde achar melhor.",
                 icon: <Sparkles className="size-5" text-fuchsia-400 />,
               },
               {
-                title: "Design Responsivo",
-                desc: "Funciona em qualquer tela",
+                title: "Excelente Escalabilidade",
+                desc: "Aplicativo desenvolvido com as melhores tecnologias web para garantir escalabilidade ilimitada.",
                 icon: <Star className="size-5" text-amber-400 />,
               },
               {
-                title: "Design Responsivo",
-                desc: "Funciona em qualquer tela",
+                title: "Customização sem Limites",
+                desc: "Personalize menus, crie formulários e funcionalidades de forma irrestrita.",
                 icon: <Zap className="size-5" text-emerald-400 />,
               },
               {
-                title: "Design Responsivo",
-                desc: "Funciona em qualquer tela",
+                title: "Planos Variados",
+                desc: "Escolha o plano que melhor se encaixa no seu orçamento ou use nossa opção gratuita.",
                 icon: <Shield className="size-5" text-sky-400 />,
               },
               {
-                title: "Design Responsivo",
-                desc: "Funciona em qualquer tela",
+                title: "Limites Exclusivos",
+                desc: "Os limites de transmissão de dados são exclusivos para cada tipo de demanda.",
                 icon: <Sparkles className="size-5" text-fuchsia-400 />,
               },
               {
-                title: "Design Responsivo",
-                desc: "Funciona em qualquer tela",
+                title: "Bibliotecas Web",
+                desc: "Todas as bibliotecas e frameworks disponíveis no mercado estão disponíveis.",
                 icon: <Star className="size-5" text-fuchsia-400 />,
               }
             ].map((f) => (
