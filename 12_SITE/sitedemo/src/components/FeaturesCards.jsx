@@ -1,5 +1,3 @@
-import { Shield, Sky, Zap, Sparkles } from "lucide-react"
-
 const FeaturesCards = ( { icon, title, desc } ) => {
 
     return (
