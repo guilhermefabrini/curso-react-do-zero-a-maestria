@@ -1,6 +1,6 @@
 import { ArrowRight, Zap, Shield, Star } from "lucide-react";
 import { motion } from "framer-motion";
-console.log(motion) // somente para remover o erro de variável não utilizada
+
 
 // Components
 import HeroCards from "./HeroCards";
@@ -9,17 +9,17 @@ const Hero = () => {
 
     const heroCards = [
       {
-        icon: 1,
+        icon: <Zap className="size-5 text-emerald-400" />,
         label: "Velocidade",
         text: "Desempenho garantido 24h por dia, 7 dias por semana.",
       },
       {
-        icon: 2,
+        icon: <Shield className="size-5 text-sky-400" />,
         label: "Segurança",
         text: "Equipes de segurança digital presentes em tempo integral garantindo a confiabilidade das transações.",
       },
       {
-        icon: 3,
+        icon: <Star className="size-5 text-amber-400" />,
         label: "Conversão",
         text: "As taxas de conversão de dados são superiores a qualquer outro software no mercado.",
       },

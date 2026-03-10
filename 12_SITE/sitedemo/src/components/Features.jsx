@@ -9,32 +9,32 @@ const Features = () => {
       {
         title: "Design Responsivo",
         desc: "O aplicativo se adapta a qualquer tamanho de tela. Celular, tablet ou PC, use de onde achar melhor.",
-        icon: <Sparkles className="size-5" text-fuchsia-400 />,
+        icon: <Sparkles className="size-20 md:size-10 lg:size-20 text-fuchsia-400" />,
       },
       {
         title: "Excelente Escalabilidade",
         desc: "Aplicativo desenvolvido com as melhores tecnologias web para garantir escalabilidade ilimitada.",
-        icon: <Star className="size-5" text-amber-400 />,
+        icon: <Star className="size-20 md:size-10 lg:size-20 text-amber-400" />,
       },
       {
         title: "Customização sem Limites",
         desc: "Personalize menus, crie formulários e funcionalidades de forma irrestrita.",
-        icon: <Zap className="size-5" text-emerald-400 />,
+        icon: <Zap className="size-20 md:size-10 lg:size-20 text-emerald-400" />,
       },
       {
         title: "Planos Variados",
         desc: "Escolha o plano que melhor se encaixa no seu orçamento ou use nossa opção gratuita.",
-        icon: <Shield className="size-5" text-sky-400 />,
+        icon: <Shield className="size-20 md:size-10 lg:size-20 text-sky-400" />,
       },
       {
         title: "Limites Exclusivos",
         desc: "Os limites de transmissão de dados são exclusivos para cada tipo de demanda.",
-        icon: <Sparkles className="size-5" text-fuchsia-400 />,
+        icon: <Sparkles className="size-20 md:size-10 lg:size-20 text-fuchsia-400" />,
       },
       {
         title: "Bibliotecas Web",
         desc: "Todas as bibliotecas e frameworks disponíveis no mercado estão disponíveis.",
-        icon: <Star className="size-5" text-amber-400 />,
+        icon: <Star className="size-20 md:size-10 lg:size-20 text-amber-400" />,
       },
     ];
 
@@ -45,7 +45,7 @@ const Features = () => {
           <p className="text-slate-300 mt-2 max-w-2xl">
             Nosso SaaS fornece todas as soluções necessárias para seu negócio:
           </p>
-          <div className="mt-8 grid grid-cols-1 md-grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {cardsFeatures.map((card) => (
                 <FeaturesCards key={card.title} icon={card.icon} title={card.title} desc={card.desc} />
             ))}
