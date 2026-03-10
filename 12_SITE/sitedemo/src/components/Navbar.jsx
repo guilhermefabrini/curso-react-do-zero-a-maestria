@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Sparkles, Menu, X } from "lucide-react";
 
 const Navbar = () => {
   // Este estado é usado para controlar a abertura e fechamento do menu para mobile.
   const [open, setOpen] = useState(false);
+  const [isTop, setIsTop] = useState(true);
 
   const navLinks = [
     { href: "#features", label: "Recursos" },
@@ -12,14 +13,29 @@ const Navbar = () => {
     { href: "#faq", label: "FAQ" },
   ];
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsTop(window.scrollY <= 1);
+    }
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
   return (
     <>
       {/* Navbar */}
-      <header className="sticky top-0 z-40 border-b border-white/5">
+      <header
+        className={`bg-slate-950 sticky top-0 z-40 border-b border-white/5 ${
+          isTop
+            ? "bg-slate-950 sticky top-0 z-40 border-b border-white/5"
+            : "bg-white-950 sticky top-0 z-40 border-b border-white/5 shadow-lg"
+        }`}
+      >
         <div className="mx-auto max-w-6xl px-4 py-4 flex items-center justify-between">
           <a href="#" className="flex items-center gap-2">
-            <Sparkles className="size-5 text-fuchsia-400" />
-            <span className="font-bold tracking-tight ">Minha Marca</span>
+            <img src="../../public/gteclg.png" className="w-30 rounded-lg" />
+            {/* <Sparkles className="size-5 text-fuchsia-400" />
+            <span className="font-bold tracking-tight ">GTEC Soluções</span> */}
           </a>
 
           <nav className="hidden md:flex items-center gap-6 text-sm">
@@ -27,7 +43,7 @@ const Navbar = () => {
               <a
                 key={l.href}
                 href={l.href}
-                className="hover:text-fuchsia-300 transition"
+                className="hover:text-sky-300 transition"
               >
                 {l.label}
               </a>
@@ -48,11 +64,13 @@ const Navbar = () => {
               <div className="fixed right-0 top-0 h-full w-80 bg-slate-900 border-l border-white/10 p-6">
                 <div className="flex items-center justify-between mb-2">
                   <div className="flex items-center gap-2">
-                    <Sparkles className="size-6 text-fuchsia-400" />
-                    <span className="font-semibold">Minha Marca</span>
+                    <img
+                      src="../../public/gteclg.png"
+                      className="w-30 rounded-lg"
+                    />
                   </div>
                   <button
-                    className="p-2 rounded-lg"
+                    className="p-2 rounded-lg hover:text-sky-300 transition cursor-pointer"
                     onClick={() => setOpen(false)}
                   >
                     <X className="size-5" />
@@ -63,7 +81,7 @@ const Navbar = () => {
                     <a
                       key={l.href}
                       href={l.href}
-                      className="text-slate-200"
+                      className="text-slate-200 hover:text-sky-300 transition"
                       onClick={() => setOpen(false)}
                     >
                       {l.label}
