@@ -74,9 +74,8 @@ const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 1 }}
-              className="mt-14 grid grid-cols-3 gap-4"
+              className="mt-14 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4"
             >
-
               {heroCards.map((card) => (
                 <HeroCards key={card.id} icon={card.icon} label={card.label} text={card.text} />
               ))}
