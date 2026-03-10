@@ -31,7 +31,7 @@ const Hero = () => {
     return (
       <>
         <section className="relative overflow-hidden">
-          <div className="mx-auto max-w-6xl px-4 py-20 relative">
+          <div className="mx-auto max-w-6xl px-4 py-10 relative">
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -46,15 +46,15 @@ const Hero = () => {
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 1 }}
-              className="mt-4 text-slate-300 max-w-4xl"
+              transition={{ duration: 0.5, delay: 0.5 }}
+              className="mt-7 text-slate-300 max-w-4xl"
             >
               Nosso SaaS se integra perfeitamente em qualquer infraestrutura, providenciando maior controle sobre todos os setores de sua empresa com um dashboard completo e intuitivo. Cadastre clientes e produtos, gerencie seu departamento financeiro, emita notas fiscais e tenha um controle de estoque robusto.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 1 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
               className="mt-8 flex flex-row gap-3"
             >
               <a
@@ -73,7 +73,7 @@ const Hero = () => {
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.5 }}
+              transition={{ duration: 0.5, delay: 1 }}
               className="mt-14 grid grid-cols-3 gap-4"
             >
 
