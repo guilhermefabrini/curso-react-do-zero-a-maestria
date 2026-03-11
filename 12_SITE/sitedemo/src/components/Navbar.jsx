@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
-import { Sparkles, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
   // Este estado é usado para controlar a abertura e fechamento do menu para mobile.
   const [open, setOpen] = useState(false);
+  // Controla o comportamento da navbar de acordo com o scroll.
   const [isTop, setIsTop] = useState(true);
 
   const navLinks = [
