@@ -7,7 +7,7 @@ const Pricing = () => {
           <div>
             <h2 className="text-3xl font-bold">Plano único, sem complicação</h2>
             <p className="text-slate-300 mt-4 max-w-2xl">
-              Nosso SaaS fornece todas as soluções necessárias para seu negócio:
+              Confira todos os benefícios do nosso sistema
             </p>
             <ul className="mt-4 space-y-2 text-sm text-slate-300">
               <li className="flex items-center gap-2">
@@ -28,7 +28,7 @@ const Pricing = () => {
                 <Clock1 className="size-4 text-amber-400" />
                 <p>Somente hoje!</p>
             </div>
-            <button className="mt-6 cursor-pointer rounded-2xl bg-fuchsia-600 hover:bg-fuchsia-800 px-6 py-3 font-medium" href="#">
+            <button className="mt-6 cursor-pointer rounded-2xl bg-sky-600 hover:bg-sky-800 px-6 py-3 font-medium" href="#">
                 Comprar agora!
             </button>
           </div>
