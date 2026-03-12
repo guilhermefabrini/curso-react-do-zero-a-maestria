@@ -11,13 +11,16 @@ const Pricing = () => {
             </p>
             <ul className="mt-4 space-y-2 text-sm text-slate-300">
               <li className="flex items-center gap-2">
-                <Check className="size-4 text-emerald-400" /> Benefício 1
+                <Check className="size-4 text-emerald-400" />
+                1 milhão de transações gratuitas ao mês
               </li>
               <li className="flex items-center gap-2">
-                <Check className="size-4 text-emerald-400" /> Benefício 2
+                <Check className="size-4 text-emerald-400" /> 
+                Três meses de suporte ilimitado
               </li>
               <li className="flex items-center gap-2">
-                <Check className="size-4 text-emerald-400" /> Benefício 3
+                <Check className="size-4 text-emerald-400" /> 
+                Implementação totalmente assistida
               </li>
             </ul>
           </div>
