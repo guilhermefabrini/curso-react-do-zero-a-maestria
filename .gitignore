@@ -1,6 +1,7 @@
 # Dependências Node (em qualquer subpasta)
 node_modules/
 1_INTRO/hello-world/node_modules
+13_REACTGRAM/mongodbuserinfo.txt
 
 # Builds comuns
 dist/
