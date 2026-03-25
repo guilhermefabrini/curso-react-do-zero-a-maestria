@@ -2,6 +2,7 @@ const User = require("../models/User")
 
 const bcrypt = require("bcryptjs")
 const jwt = require("jsonwebtoken")
+const { useReducer } = require("react")
 
 const jwtSecret = process.env.JWT_SECRET
 
@@ -50,8 +51,31 @@ const register = async (req, res) => {
 }
 
 // Sign user in
-const login = (req, res) => {
-    res.send("login")
+const login = async (req, res) => {
+    
+    const { email, password } = req.body
+
+    const user = await User.findOne({email})
+
+    // Verifica se o usuário existe
+    if (!user) {
+        res.status(404).json({errors: ["Usuário não encontrado"]})
+        return
+    }
+
+    // Verifica se a senha está correta
+    if (!(await bcrypt.compare(password, user.password))) {
+        res.status(422).json({errors: ["Senha inválida"]})
+        return
+    }
+
+    // Retorna usuário com o token
+    res.status(201).json({
+        _id: user._id,
+        profileImage: user.profileImage,
+        token: generateToken(newUser._id)
+    })
+
 }
 
 module.exports = {
