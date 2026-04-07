@@ -60,7 +60,14 @@ const deletePhoto = async(req, res) => {
     }
 }
 
+// Pegar todas as fotos
+const getAllPhotos = async(req, res) => {
+    const photos = await Photo.find({}).sort([["createdAt", -1]]).exec()
+    return res.status(200).json({photos})
+}
+
 module.exports = {
     insertPhoto,
-    deletePhoto
+    deletePhoto,
+    getAllPhotos
 }
