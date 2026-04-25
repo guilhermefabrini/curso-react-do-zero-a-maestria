@@ -1,0 +1,5 @@
+.container {
+    /* Ele usou esse min-height para fazer o footer ficar na parte
+    inferior da tela. Ele criou esse classe container no app.jsx */
+    min-height: 70vh;
+}

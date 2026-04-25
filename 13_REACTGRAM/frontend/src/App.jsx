@@ -14,17 +14,19 @@ function App() {
 
   return (
     <div>
-        <BrowserRouter>
-          <Navbar />
+      <BrowserRouter>
+        <Navbar />
+        <div className="container">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
           </Routes>
-          <Footer />
-        </BrowserRouter>
+        </div>
+        <Footer />
+      </BrowserRouter>
     </div>
-  )
+  );
 }
 
 export default App
