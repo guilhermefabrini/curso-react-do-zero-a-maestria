@@ -21,6 +21,15 @@ const register = async(data) => {
     }
 }
 
+const logout = () => {
+    localStorage.removeItem("user")
+}
+
+const authService = {
+    register,
+    logout
+}
+
 const authService = {
     register
 }
